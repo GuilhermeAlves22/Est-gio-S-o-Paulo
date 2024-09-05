@@ -1,0 +1,122 @@
+int main()
+{
+    // Questão 1
+    int INDICE = 13;
+    int SOMA = 0;
+    int k = 0;
+    while (k < INDICE)
+    {
+        k = k++;
+        SOMA = SOMA++;
+    };
+    printf(SOMA);
+
+    // Questão 2
+    int FIB = 1;
+    int aux2 = 0;
+    int aux;
+    printf("Digite o valor a ser verificado:\n");
+    scanf("%d", &aux);
+    if (aux == 0 || aux == 1)
+    {
+        printf("Pertence á Fibonacci");
+    }
+    while (aux > FIB)
+    {
+        int aux3 = aux2;
+        FIB = FIB + aux2;
+        aux2 = aux3;
+    }
+    if (aux == FIB)
+    {
+        printf("Pertence á Fibonacci");
+    }
+    else
+    {
+        printf("Não pertence à Fibonacci");
+    }
+
+    // Questão 3
+    int faturamento[30] = {0, 5, 17, 35, 25, 95, 43, 765, 0, 4, 5, 7, 12, 0, 5, 17, 35, 25, 95, 43, 765, 0, 4, 5, 7, 12, 54, 82, 13, 85};
+    // Retorna menor valor
+    int a = 0;
+    int aux = faturamento[0];
+    int retorno;
+    while (a <= 29)
+    {
+        if (faturamento[a] < faturamento[a + 1])
+        {
+            retorno = faturamento[a];
+        }
+        a++;
+    }
+    printf("O menor valor é: ", retorno);
+    // Retorna maior valor
+    int a = 0;
+    int aux = faturamento[0];
+    int retorno;
+    while (a <= 29)
+    {
+        if (faturamento[a] > faturamento[a + 1])
+        {
+            retorno = faturamento[a];
+        }
+        a++;
+    }
+    printf("O maior valor é: ", retorno);
+
+    // Dias a cima da média mensal
+    float media;
+    int aux = 0;
+    while (aux <= 29)
+    {
+        media = media + faturamento[aux];
+        aux++;
+    }
+    media = media / 30;
+    int dias = 0;
+    aux = 0;
+    while (aux <= 29)
+    {
+        if (faturamento[aux] > media)
+        {
+            dias++;
+        }
+    }
+    printf("O número de dias acima da média mensal foi de:\n");
+    printf("%d", dias);
+
+    // Questão 4
+    float SP = 67836.43;
+    float RJ = 36678.66;
+    float MG = 29229.88;
+    float ES = 27165.48;
+    float OUTROS = 19849.53;
+    float total = SP + MG + RJ + ES + OUTROS;
+    SP = (100 * SP) / total;
+    RJ = (100 * RJ) / total;
+    MG = (100 * MG) / total;
+    ES = (100 * ES) / total;
+    OUTROS = (100 * OUTROS) / total;
+    printf("A porcentagem de São Paulo é: %d", SP);
+    printf("A porcentagem do Rio de Janeiro é: %d", RJ);
+    printf("A porcentagem de Minas Gerais é: %d", MG);
+    printf("A porcentagem do Espírito Santo é: %d", ES);
+    printf("A porcentagem de outros estados é: %d", OUTROS);
+
+    // Questão 5
+
+    char texto[20] = {"Boa tarde a todos"};
+    char textoInv[20];
+    int aux = 19;
+    aux2 = 0;
+    while (aux2 < aux + 1)
+    {
+        textoInv[aux2] = texto[aux];
+        aux--;
+        aux2++;
+    }
+
+    printf("Texto padrão: %s", texto);
+    printf("Texto invertido: %s", textoInv);
+}
